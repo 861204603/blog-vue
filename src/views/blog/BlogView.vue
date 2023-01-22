@@ -196,6 +196,10 @@
             that.comment.content = ''
             that.comments.unshift(data.data)
             that.commentCountsIncrement()
+            //todo
+            getCommentsByArticle(this.article.id).then(result => {
+              this.comments=result.data;
+            })
 
           }else{
                that.$message({type: 'error', message: data.msg, showClose: true})

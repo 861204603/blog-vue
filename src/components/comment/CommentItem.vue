@@ -5,7 +5,7 @@
         <img class="me-view-picture" :src="comment.author.avatar"></img>
       </a>
       <div class="me-view-info">
-        <span class="me-view-nickname">{{comment.author.nickname}}</span>
+        <span class="me-view-nickname">{{comment.author.nickName}}</span>
         <div class="me-view-meta">
           <span>{{rootCommentCounts - index}}楼</span>
           <span>{{comment.createDate | format}}</span>
@@ -28,7 +28,7 @@
           <div style="font-size: 14px">
             <span class="me-reply-user">{{c.author.nickname}}:&nbsp;&nbsp;</span>
 
-            <span v-if="c.level == 2" class="me-reply-user">@{{c.toUser.nickname}} </span>
+            <span v-if="c.level == 2" class="me-reply-user">@{{c.toUser.nickName}} </span>
 
             <span>{{c.content}}</span>
           </div>
@@ -87,7 +87,7 @@
 
         if (this.commentShowIndex !== commentShowIndex) {
           if (toUser) {
-            this.placeholder = `@${toUser.nickname} `
+            this.placeholder = `@${toUser.nickName} `
             this.reply.toUserId = toUser.id
           } else {
             this.placeholder = '你的评论...'
